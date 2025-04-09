@@ -5,7 +5,6 @@ import com.grazielleanaia.customer_registration2.business.CustomerService;
 import com.grazielleanaia.customer_registration2.business.dto.CustomerDTO;
 import com.grazielleanaia.customer_registration2.business.dto.PhoneDTO;
 import com.grazielleanaia.customer_registration2.business.dto.ResidenceDTO;
-import com.grazielleanaia.customer_registration2.infrastructure.entity.Customer;
 import com.grazielleanaia.customer_registration2.infrastructure.security.JwtUtil;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
