@@ -20,8 +20,8 @@ public class CustomerConverter {
                 .name(customerDTO.getName())
                 .email(customerDTO.getEmail())
                 .password(customerDTO.getPassword())
-                .phones(convertToPhoneList(customerDTO.getPhones()))
-                .residences(convertToResidenceList(customerDTO.getResidences()))
+                .phones(customerDTO.getPhones() != null ? convertToPhoneList(customerDTO.getPhones()) : null)
+                .residences(customerDTO.getResidences() != null ? convertToResidenceList(customerDTO.getResidences()) : null)
                 .build();
     }
 
@@ -56,8 +56,8 @@ public class CustomerConverter {
                 .name(customer.getName())
                 .email(customer.getEmail())
                 .password(customer.getPassword())
-                .residences(convertToListResidenceDTO(customer.getResidences()))
-                .phones(convertToListPhoneDTO(customer.getPhones()))
+                .residences(customer.getResidences() != null ? convertToListResidenceDTO(customer.getResidences()) : null)
+                .phones(customer.getPhones() != null ? convertToListPhoneDTO(customer.getPhones()) : null)
                 .build();
     }
 
@@ -71,16 +71,17 @@ public class CustomerConverter {
                 .build();
     }
 
-    public List<ResidenceDTO> convertToListResidenceDTO (List<Residence> residences) {
+    public List<ResidenceDTO> convertToListResidenceDTO(List<Residence> residences) {
         return residences.stream().map(this::convertToResidenceDTO).toList();
     }
 
-    public PhoneDTO convertToPhoneDTO (Phone phone) {
+    public PhoneDTO convertToPhoneDTO(Phone phone) {
         return PhoneDTO.builder()
                 .id(phone.getId())
                 .number(phone.getNumber())
                 .build();
     }
+
     public List<PhoneDTO> convertToListPhoneDTO(List<Phone> phones) {
         return phones.stream().map(this::convertToPhoneDTO).toList();
     }
@@ -133,9 +134,6 @@ public class CustomerConverter {
                 .customer_id(customerID)
                 .build();
     }
-
-
-
 
 
 }

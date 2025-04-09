@@ -18,27 +18,4 @@ public class PhoneDTO {
 
     private Long customer_id;
 
-//    public String getNumber() {
-//        return number;
-//    }
-//
-//    public void setNumber(String number) {
-//        this.number = number;
-//    }
-//
-//    public Long getId() {
-//        return id;
-//    }
-//
-//    public void setId(Long id) {
-//        this.id = id;
-//    }
-//
-//    public PhoneDTO(String number, Long id) {
-//        this.number = number;
-//        this.id = id;
-//    }
-//
-//    public PhoneDTO() {
-//    }
 }
